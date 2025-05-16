@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Smile Beauty Salon and Spa.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="smile_beauty_salon_and_spa">
+  <link rel="apple-touch-icon" href="favicon.jpeg">
+<!--  <link rel="apple-touch-icon" href="icons/Icon-192.png">-->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.jpeg"/>
+
+  <title>Smile Beauty Salon And Spa</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      margin: 0;
+      background-color: #FFCDD9;
+    }
+
+    .loader {
+      border: 6px solid #fff;
+      border-top: 6px solid #E94F79;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin: auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
+
+</head>
+<body>
+  <div id="loading" style="display: flex; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #FFCDD9, #FF9EBF);">
+    <div style="text-align: center;">
+      <div id="lottie" style="width: 200px; height: 200px; margin: auto;"></div>
+      <h2 style="color: #E94F79; font-family: 'Arial', sans-serif;">Bringing elegance to your screen....</h2>
+    </div>
+  </div>
+
+  <script>
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets2/loading.json' // Place your Lottie JSON here
+    });
+
+    window.addEventListener('flutter-first-frame', function () {
+      document.getElementById('loading')?.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
